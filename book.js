@@ -16,7 +16,7 @@ function addBookToLibrary() {
 }
 
 function displayBooks(arr) {
-  for(let i = 0, i < arr.length - 1, i ++) {
+  for (let i = 0; i < arr.length - 1; i++) {
     // Code to display book to page. Can use a table to display or each can have their own "card" etc.
   }
 }

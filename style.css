@@ -1,3 +1,31 @@
 html {
-  background-color: darkgrey;
+  background-color: #0f172a;
+  font-family: "Roboto", sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 4fr;
+}
+
+.title-img {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+
+.header-container {
+  background-color: #64748b;
+}
+
+.sidebar-container {
+  background-color: #1e293b;
+  grid-row: 2 / 3;
+  height: 1000px;
+}
+
+.main-container {
+  background-color: #e2e8f0;
+  border-left: 5px solid #cbd5e1;
+  border-top: 5px solid #cbd5e1;
 }
