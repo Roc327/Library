@@ -26,6 +26,16 @@ function displayBooks(arr) {
   // Iterate array and display the object to the page
   for (let i = 0; i < arr.length; i++) {
     console.log(arr[i]); // temp code to test loop
+
+    const bookCard = `<div class="book-card">
+      <span class="book-title">Title</span>
+      <span class="book-author">Author</span>
+      <span class="book-pages"></span>
+      <div class="read-checkbox">
+        <input type="checkbox" id="readStatus" name="readStatus" checked="checked">
+        <label for="readStatus">Have read.</label>
+      </div>
+    </div>`;
   }
 }
 
