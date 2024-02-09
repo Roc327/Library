@@ -29,7 +29,14 @@ function displayBooks(arr) {
   }
 }
 
+function newBookForm() {
+  // Displays a popup form to add a new book when the new button is pressed
+}
+
 // const newButton = document.getElementById("foo");
 // newButton.addEventListener("click", foo, false);
 
 addBookToLibrary("American Gods", "Neil Gaiman", 596, true);
+addBookToLibrary("Dune", "Frank Hurbert", 894, false);
+addBookToLibrary("The Gunslinger", "Stephen King", 1092, true);
+displayBooks(myLibrary);
