@@ -12,24 +12,24 @@ function Book(title, author, numPages, readStatus) {
 }
 
 function addBookToLibrary(title, author, numPages, readStatus) {
+  // Add a new book object to array
   const newBook = new Book(title, author, numPages, readStatus);
   myLibrary.push(newBook);
 }
 
 function deleteBooks(index) {
-  delete myLibrary[index];
+  // Remove book from array at provided index
+  myLibrary.splice(index, 1);
 }
 
 function displayBooks(arr) {
-  let 
-  //for (let i = 0; i < arr.length - 1; i++) {
-    // Code to display book to page. Can use a table to display or each can have their own "card" etc.
+  // Iterate array and display the object to the page
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]); // temp code to test loop
   }
 }
 
-const newButton = document.getElementById("foo");
-newButton.addEventListener("click", foo, false);
+// const newButton = document.getElementById("foo");
+// newButton.addEventListener("click", foo, false);
 
-let testBook = new Book("American Gods", "Neil Gaiman", 560, true);
-
-myLibrary.push(testBook);
+addBookToLibrary("American Gods", "Neil Gaiman", 596, true);
