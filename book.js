@@ -24,18 +24,28 @@ function deleteBooks(index) {
 
 function displayBooks(arr) {
   // Iterate array and display the object to the page
-  for (let i = 0; i < arr.length; i++) {
-    console.log(arr[i]); // temp code to test loop
+  const mainContainer = document.querySelector(".main-container");
 
-    const bookCard = `<div class="book-card">
-      <span class="book-title">Title</span>
-      <span class="book-author">Author</span>
-      <span class="book-pages"></span>
+  for (let i = 0; i < arr.length; i++) {
+    const div = document.createElement("div");
+    div.classList.add("book-card");
+    div.setAttribute("id", `arr[${i}]`);
+
+    div.innerHTML = `<span class="book-title">Title: ${arr[i].title}</span>
+      <span class="book-author">Author: ${arr[i].author}</span>
+      <span class="book-pages">Pages: ${arr[i].numPages}</span>
       <div class="read-checkbox">
-        <input type="checkbox" id="readStatus" name="readStatus" checked="checked">
+        <input type="checkbox" id="readStatus" name="readStatus">
         <label for="readStatus">Have read.</label>
-      </div>
-    </div>`;
+      </div>`;
+
+    mainContainer.appendChild(div);
+
+    if (arr[i].readStatus == true) {
+      document
+        .getElementById(`arr[${i}]`)
+        .getElementsByTagName("input").readStatus.checked = true;
+    }
   }
 }
 
