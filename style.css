@@ -70,8 +70,12 @@ img {
 
 .sidebar-container {
   background-color: #1e293b;
+  color: #64748b;
   grid-row: 2 / 3;
   height: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .main-container {
@@ -101,4 +105,34 @@ img {
   color: #1e293b;
   justify-content: space-between;
   align-items: center;
+}
+
+.book-formField {
+  display: flex;
+  flex-direction: column;
+  color: #64748b;
+  margin: 25px 0 25px 0;
+}
+
+#formButton-div {
+  margin-top: 25px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#form-button {
+  border-radius: 5px;
+  border: 0px;
+  height: 35px;
+  width: 95px;
+  background-color: #64748b;
+  color: #e2e8f0;
+}
+
+fieldset {
+  border-color: #64748b;
+}
+
+#newBook-form {
+  display: none;
 }

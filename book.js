@@ -51,6 +51,7 @@ function displayBooks(arr) {
 
 function newBookForm() {
   // Displays a popup form to add a new book when the new button is pressed
+  document.getElementById("newBook-form").style.display = "block";
 }
 
 // const newButton = document.getElementById("foo");
