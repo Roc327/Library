@@ -26,6 +26,8 @@ function displayBooks(arr) {
   // Iterate array and display the object to the page
   const mainContainer = document.querySelector(".main-container");
 
+  mainContainer.innerHTML = "";
+
   for (let i = 0; i < arr.length; i++) {
     const div = document.createElement("div");
     div.classList.add("book-card");
@@ -55,11 +57,26 @@ function newBookForm() {
 }
 
 function getBookFormInfo() {
-  // Enter code to get info from the input fields for the forms when button is pressed
-}
+  const form = document.getElementById("book-form");
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    console.log("Hi There");
+    const title = form.bookTitle.value;
+    const author = form.bookAuthor.value;
+    const pages = form.bookPages.value;
 
-// const newButton = document.getElementById("foo");
-// newButton.addEventListener("click", foo, false);
+    if (document.getElementById("read-yes").checked) {
+      addBookToLibrary(title, author, pages, true);
+    } else {
+      addBookToLibrary(title, author, pages, false);
+    }
+
+    displayBooks(myLibrary);
+    form.reset();
+
+    document.getElementById("newBook-form").style.display = "none";
+  });
+}
 
 addBookToLibrary("American Gods", "Neil Gaiman", 596, true);
 addBookToLibrary("Dune", "Frank Hurbert", 894, false);
