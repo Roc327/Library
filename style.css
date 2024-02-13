@@ -101,10 +101,19 @@ img {
   flex-direction: column;
   max-width: 300px;
   max-height: 300px;
-  font-size: 24px;
+  font-size: 22px;
   color: #1e293b;
   justify-content: space-between;
   align-items: center;
+}
+
+.removeButton {
+  border: 0px;
+  border-radius: 10px;
+  height: 28px;
+  width: 100px;
+  background-color: #293f73;
+  color: #e2e8f0;
 }
 
 .book-formField {

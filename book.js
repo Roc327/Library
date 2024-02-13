@@ -32,12 +32,15 @@ function displayBooks(arr) {
     div.classList.add("book-card");
     div.setAttribute("id", `arr[${i}]`);
 
+    const removeButtonID = `${i}`;
+
     div.innerHTML = `<span class="book-title">Title: ${arr[i].title}</span>
       <span class="book-author">Author: ${arr[i].author}</span>
       <span class="book-pages">Pages: ${arr[i].numPages}</span>
       <div class="read-checkbox">
         <input type="checkbox" id="readStatus" name="readStatus">
         <label for="readStatus">Have read.</label>
+        <button class="removeButton" id=${removeButtonID}>Remove Book</button>
       </div>`;
 
     mainContainer.appendChild(div);
@@ -57,24 +60,22 @@ function newBookForm() {
 
 function getFormInfo() {
   const form = document.getElementById("book-form");
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    console.log("Hi There");
-    const title = form.bookTitle.value;
-    const author = form.bookAuthor.value;
-    const pages = form.bookPages.value;
+  event.preventDefault();
 
-    if (document.getElementById("read-yes").checked) {
-      addBookToLibrary(title, author, pages, true);
-    } else {
-      addBookToLibrary(title, author, pages, false);
-    }
+  const title = form.bookTitle.value;
+  const author = form.bookAuthor.value;
+  const pages = form.bookPages.value;
 
-    displayBooks(myLibrary);
-    form.reset();
+  if (document.getElementById("read-yes").checked) {
+    addBookToLibrary(title, author, pages, true);
+  } else {
+    addBookToLibrary(title, author, pages, false);
+  }
 
-    document.getElementById("newBook-form").style.display = "none";
-  });
+  displayBooks(myLibrary);
+  form.reset();
+
+  document.getElementById("newBook-form").style.display = "none";
 }
 
 addBookToLibrary("American Gods", "Neil Gaiman", 596, true);
