@@ -20,6 +20,16 @@ function addBookToLibrary(title, author, numPages, readStatus) {
 function deleteBooks(index) {
   // Remove book from array at provided index
   myLibrary.splice(index, 1);
+  displayBooks(myLibrary);
+}
+
+function handleCheckbox(index) {
+  // Change readStatus in object when read checkbox is checked
+  if (myLibrary[index].readStatus === false) {
+    myLibrary[index].readStatus = true;
+  } else {
+    myLibrary[index].readStatus = false;
+  }
 }
 
 function displayBooks(arr) {
@@ -38,12 +48,15 @@ function displayBooks(arr) {
       <span class="book-author">Author: ${arr[i].author}</span>
       <span class="book-pages">Pages: ${arr[i].numPages}</span>
       <div class="read-checkbox">
-        <input type="checkbox" id="readStatus" name="readStatus">
+        <input type="checkbox" id="readStatus" name="readStatus" onchange=handleCheckbox(${removeButtonID})>
         <label for="readStatus">Have read.</label>
         <button class="removeButton" id=${removeButtonID}>Remove Book</button>
       </div>`;
 
     mainContainer.appendChild(div);
+    document
+      .getElementById(`${removeButtonID}`)
+      .setAttribute("onclick", `deleteBooks(${removeButtonID})`);
 
     if (arr[i].readStatus == true) {
       document
@@ -77,8 +90,3 @@ function getFormInfo() {
 
   document.getElementById("newBook-form").style.display = "none";
 }
-
-addBookToLibrary("American Gods", "Neil Gaiman", 596, true);
-addBookToLibrary("Dune", "Frank Herbert", 894, false);
-addBookToLibrary("The Gunslinger", "Stephen King", 1092, true);
-displayBooks(myLibrary);
