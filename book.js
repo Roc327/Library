@@ -25,7 +25,6 @@ function deleteBooks(index) {
 function displayBooks(arr) {
   // Iterate array and display the object to the page
   const mainContainer = document.querySelector(".main-container");
-
   mainContainer.innerHTML = "";
 
   for (let i = 0; i < arr.length; i++) {
@@ -56,7 +55,7 @@ function newBookForm() {
   document.getElementById("newBook-form").style.display = "block";
 }
 
-function getBookFormInfo() {
+function getFormInfo() {
   const form = document.getElementById("book-form");
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -79,6 +78,6 @@ function getBookFormInfo() {
 }
 
 addBookToLibrary("American Gods", "Neil Gaiman", 596, true);
-addBookToLibrary("Dune", "Frank Hurbert", 894, false);
+addBookToLibrary("Dune", "Frank Herbert", 894, false);
 addBookToLibrary("The Gunslinger", "Stephen King", 1092, true);
 displayBooks(myLibrary);
