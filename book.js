@@ -54,6 +54,10 @@ function newBookForm() {
   document.getElementById("newBook-form").style.display = "block";
 }
 
+function getBookFormInfo() {
+  // Enter code to get info from the input fields for the forms when button is pressed
+}
+
 // const newButton = document.getElementById("foo");
 // newButton.addEventListener("click", foo, false);
 
